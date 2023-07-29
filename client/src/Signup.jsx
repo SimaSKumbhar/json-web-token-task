@@ -12,7 +12,7 @@ function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/register', {name, dob, email, password})
+        axios.post('https://json-web-token-task.vercel.app/register', {name, dob, email, password})
         .then(res => {
             navigate('/login')
         }).catch(err => console.log(err))
