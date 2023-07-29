@@ -9,7 +9,7 @@ function Home() {
     const[users,setUsers]=useState([])
     axios.defaults.withCredentials=true;
     useEffect(()=>{
-        axios.get('http://localhost:3001/home')
+        axios.get('https://json-web-token-task.vercel.app/home')
         .then(result =>{console.log(result)
             if(result.data!=="Success") {
                  navigate('/login')
@@ -19,7 +19,7 @@ function Home() {
         .catch(err=>console.log(err))
     },[])
     useEffect(()=>{
-        axios.get('http://localhost:3001/')
+        axios.get('https://json-web-token-task.vercel.app/')
         .then(users=>setUsers(users.data))
         .catch(err=>console.log(err))
     },[])
