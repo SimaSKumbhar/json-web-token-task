@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin:[""],
+  origin:["https://json-web-token-task-3sud.vercel.app/"],
   methods:["GET","POST"],
   credentials:true,
 }));
