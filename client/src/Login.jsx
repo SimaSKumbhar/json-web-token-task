@@ -13,7 +13,7 @@ function Login() {
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://json-web-token-task.vercel.app/login', {email, password})
+        axios.post('http://localhost:3001/login', {email, password})
         .then(res => {
             console.log(res);
             localStorage.setItem("user",data.current.value)
