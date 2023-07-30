@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin:["https://json-web-token-task-3sud.vercel.app"],
+  origin:["http://localhost:5173"],
   methods:["GET","POST"],
   credentials:true,
 }));
@@ -40,29 +40,6 @@ app.get('/',(req,res)=>{
   .then(users=>res.json(users))
   .catch(err=>res.json(err))
 })
-
-// app.post("/login", (req, res) => {
-//   const { email, password } = req.body;
-//   UserModel.findOne({ email: email })
-//   .then(user => {
-
-//     if(user){
-//     bcrypt.compare(password,user.password,(err,response)=>{
-//         if(response){
-//            const token = jwt.sign({email:user.email},"jwt-secret-key",{expiresIn:"7d"})
-//            res.cookie("token",token);
-//            res.json("success")
-//         }else{
-//             res.json("password is incorrect") 
-//          }  
-//     })
-// }else{
-//     res.json('no record existed')
-// }
-    
-//   })
-
-// })
 //start here
 
 app.post('/login',(req,res)=>{
